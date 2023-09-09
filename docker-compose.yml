@@ -7,7 +7,7 @@ services:
     volumes:
       - /home/jellyfin/config:/config
       - /home/jellyfin/cache:/cache
-      - /home/media:/media
+      - /home/media:/home/media
     ports:
       - 8096:8096
     restart: 'unless-stopped'
