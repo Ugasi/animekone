@@ -5,9 +5,9 @@ services:
     container_name: jellyfin
     network_mode: 'host'
     volumes:
-      - /home/jellyfin/config:/config
-      - /home/jellyfin/cache:/cache
-      - /home/media:/home/media
+      - "${JELLYFIN_PATH}/config:/config"
+      - "${JELLYFIN_PATH}/cache:/cache"
+      - "${CONTENT_PATH}:/media"
     ports:
       - 8096:8096
     restart: 'unless-stopped'
