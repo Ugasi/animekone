@@ -14,6 +14,7 @@ services:
   deluge:
     image: linuxserver/deluge:2.1.1
     container_name: deluge
+    network_mode: 'host'
     environment:
       - PUID=1000
       - PGID=1000
