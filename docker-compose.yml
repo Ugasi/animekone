@@ -11,3 +11,17 @@ services:
     ports:
       - 8096:8096
     restart: 'unless-stopped'
+  deluge:
+    image: lscr.io/linuxserver/deluge:latest
+    container_name: deluge
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - "${DELUGE_PATH}:/config"
+      - "${CONTENT_PATH}:/downloads"
+    ports:
+      - 8112:8112
+      - 6881:6881
+      - 6881:6881/udp
+    restart: unless-stopped
