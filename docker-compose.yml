@@ -38,6 +38,7 @@ services:
       - TZ=Etc/UTC
     volumes:
       - "${SONARR_PATH}:/config"
+      - "${CONTENT_PATH}:/downloads"
     ports:
       - 8989:8989
     restart: unless-stopped
