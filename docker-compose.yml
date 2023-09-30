@@ -42,7 +42,7 @@ services:
       - TZ=Europe/Helsinki
     volumes:
       - "${SONARR_PATH}:/config"
-      - "${CONTENT_PATH}:/tv"
+      - "${CONTENT_PATH}/Series:/tv"
       - "${DOWNLOAD_PATH}:/downloads"
     ports:
       - 8989:8989
