@@ -7,7 +7,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=Europe/Helsinki
     volumes:
       - "${JELLYFIN_PATH}:/config"
       - "${CONTENT_PATH}/Series:/data/tvshows"
@@ -22,7 +22,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=Europe/Helsinki
       - WEBUI_PORT=8080
     volumes:
       - "${TORRENT_CLIENT_PATH}:/config"
@@ -39,7 +39,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=Europe/Helsinki
     volumes:
       - "${SONARR_PATH}:/config"
       - "${CONTENT_PATH}:/tv"
@@ -54,7 +54,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Etc/UTC
+      - TZ=Europe/Helsinki
     volumes:
       - "${RADARR_PATH}:/config"
       - "${CONTENT_PATH}/Movies:/movies"
