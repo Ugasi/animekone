@@ -32,6 +32,19 @@ services:
       - 6881:6881
       - 6881:6881/udp
     restart: unless-stopped
+  prowlarr:
+    image: lscr.io/linuxserver/prowlarr:latest
+    container_name: prowlarr
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Helsinki
+    volumes:
+      - "${PROWLARR_PATH}:/config"
+    ports:
+      - 9696:9696
+    restart: unless-stopped
   sonarr:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: sonarr
