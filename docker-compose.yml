@@ -75,3 +75,19 @@ services:
     ports:
       - 7878:7878
     restart: unless-stopped
+  salkkarikone:
+    image: salkkarikone
+    container_name: salkkarikone
+    network_mode: host
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Helsinki
+      - sftp_host=berry.seedhost.eu
+      - sftp_port=14242
+      - sftp_user=juha
+      - "sftp_password=${SFTP_PASSWORD}"
+      - sftp_path=/home7/naketus/downloads/torrents/_SARJAT
+      - sftp_file_pattern=Salatut*.mp4
+    volumes:
+      - "${CONTENT_PATH}/Series/Salatut Elämät:/downloads"
