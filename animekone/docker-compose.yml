@@ -97,6 +97,7 @@ services:
       - sftp_file_pattern=Salatut*.mp4
     volumes:
       - "${CONTENT_PATH}/Series/Salatut Elämät:/downloads"
+    restart: unless-stopped
 
 networks:
   animekone_network:
