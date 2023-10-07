@@ -9,7 +9,7 @@ services:
       - PGID=1000
       - TZ=Europe/Helsinki
     volumes:
-      - "${JELLYFIN_PATH}:/config"
+      - "./data/jellyfin:/config"
       - "${CONTENT_PATH}/Series:/data/tvshows"
       - "${CONTENT_PATH}/Movies:/data/movies"
     ports:
@@ -25,7 +25,7 @@ services:
       - TZ=Europe/Helsinki
       - WEBUI_PORT=8080
     volumes:
-      - "${TORRENT_CLIENT_PATH}:/config"
+      - "./data/qbittorrent:/config"
       - "${DOWNLOAD_PATH}:/downloads"
     ports:
       - 8080:8080
@@ -41,7 +41,7 @@ services:
       - PGID=1000
       - TZ=Europe/Helsinki
     volumes:
-      - "${PROWLARR_PATH}:/config"
+      - "./data/prowlarr:/config"
     ports:
       - 9696:9696
     restart: unless-stopped
@@ -54,7 +54,7 @@ services:
       - PGID=1000
       - TZ=Europe/Helsinki
     volumes:
-      - "${SONARR_PATH}:/config"
+      - "./data/sonarr:/config"
       - "${CONTENT_PATH}/Series:/tv"
       - "${DOWNLOAD_PATH}:/downloads"
     ports:
@@ -69,7 +69,7 @@ services:
       - PGID=1000
       - TZ=Europe/Helsinki
     volumes:
-      - "${RADARR_PATH}:/config"
+      - "./data/radarr:/config"
       - "${CONTENT_PATH}/Movies:/movies"
       - "${DOWNLOAD_PATH}:/downloads"
     ports:
