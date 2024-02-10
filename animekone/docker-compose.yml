@@ -81,7 +81,9 @@ services:
       - 7878:7878
     restart: unless-stopped
   salkkarikone:
-    image: salkkarikone
+    build:
+      context: ../salkkarikone
+      dockerfile: Dockerfile
     container_name: salkkarikone
     networks:
       - animekone_network
