@@ -80,6 +80,20 @@ services:
     ports:
       - 7878:7878
     restart: unless-stopped
+  bazarr:
+    image: lscr.io/linuxserver/bazarr:latest
+    container_name: bazarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - "./data/bazarr:/config"
+      - "${CONTENT_PATH}/Series:/tv"
+      - "${CONTENT_PATH}/Movies:/movies"
+    ports:
+      - 6767:6767
+    restart: unless-stopped
   salkkarikone:
     build:
       context: ../salkkarikone
