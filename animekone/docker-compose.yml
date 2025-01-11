@@ -4,12 +4,10 @@ services:
     container_name: jellyfin
     networks:
       - animekone_network
-    runtime: nvidia
     environment:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Helsinki
-      - NVIDIA_VISIBLE_DEVICES=all
     volumes:
       - "./data/jellyfin:/config"
       - "${CONTENT_PATH}/Series:/data/tvshows"
